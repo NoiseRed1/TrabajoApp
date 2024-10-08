@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Búsqueda de Restaurantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="map" style="height: 60%;"></div>
+  
+  <ion-item *ngIf="error">
+    <ion-label color="danger">{{ error }}</ion-label>
+  </ion-item>
+
+  <ion-list *ngIf="restaurantes.length > 0">
+    <ion-item *ngFor="let restaurante of restaurantes">
+      <ion-label>
+        <h2>{{ restaurante.tags.name || 'Restaurante sin nombre' }}</h2>
+        <p>{{ restaurante.tags.cuisine || 'Cocina no especificada' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="restaurantes.length === 0 && !error">
+    <ion-label>No se encontraron restaurantes cercanos.</ion-label>
+  </ion-item>
+</ion-content>

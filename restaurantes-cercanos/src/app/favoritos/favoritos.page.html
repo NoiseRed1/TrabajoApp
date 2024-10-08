@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Restaurantes Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let restaurante of favoritos; let i = index">
+      <ion-label>
+        <h2>{{ restaurante.name }}</h2>
+        <p>{{ restaurante.address }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="eliminarFavorito(i)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-text *ngIf="favoritos.length === 0">
+    No tienes restaurantes favoritos.
+  </ion-text>
+</ion-content>

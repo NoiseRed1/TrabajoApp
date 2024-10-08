@@ -1,0 +1,7 @@
+{
+  "name": "restaurantes-cercanos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
